@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from urllib.parse import urlparse, urlunparse
 
 
 app = Flask(__name__)
@@ -26,12 +27,7 @@ db.create_all()
 
 @app.route('/')
 def homepage():
-    return "hi"
-
-
-@app.route('/google')
-def goole():
-    return redirect('www.google.com')
+    return redirect('https://documenter.getpostman.com/view/18998972/UVXomZWZ#0395bbe2-0f48-4481-8276-243bb8e4b59d')
 
 
 @app.route('/all', methods=['GET', 'POST'])
