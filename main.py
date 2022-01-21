@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -26,7 +26,12 @@ db.create_all()
 
 @app.route('/')
 def homepage():
-    return render_template('index.html')
+    return "hi"
+
+
+@app.route('/google')
+def goole():
+    return redirect('www.google.com')
 
 
 @app.route('/all', methods=['GET', 'POST'])
